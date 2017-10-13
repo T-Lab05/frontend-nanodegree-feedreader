@@ -101,6 +101,24 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         var firstContent, secondContent;
+
+         beforeEach(function(done){
+            loadFeed(0, function(){
+                firstContent = $('.feed').text();
+                console.log(firstContent)
+                done();
+            });
+         });
+
+         it('Contents are changed', function(done){
+            loadFeed(1, function(){
+                secondContent = $('.feed').text();
+                console.log(secondContent);
+                done();
+            });
+            expect(firstContent).not.toBe(secondContent);
+         });
 
     });
 }());
