@@ -84,7 +84,15 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-         
+         beforeEach(function(done){
+            loadFeed(0, done);
+         });
+
+         it('loadFeed function is called and completes its work', function(done){
+            var numEntries = $('.feed .entry').length;
+            expect(numEntries).toBeGreaterThan(0);
+            done();
+         });
     });
     /* TODO: Write a new test suite named "New Feed Selection" */
 
