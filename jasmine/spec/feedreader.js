@@ -107,7 +107,6 @@ $(function() {
          beforeEach(function(done){
             loadFeed(0, function(){
                 firstContent = $('.feed').text();
-                console.log(firstContent);
                 done();
             });
          });
@@ -115,10 +114,9 @@ $(function() {
          it('Contents are changed', function(done){
             loadFeed(1, function(){
                 secondContent = $('.feed').text();
-                console.log(secondContent);
+                expect(firstContent).not.toBe(secondContent);
                 done();
             });
-            expect(firstContent).not.toBe(secondContent);
          });
 
     });
