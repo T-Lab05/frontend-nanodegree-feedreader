@@ -34,6 +34,7 @@ $(function() {
          it('feeds have URLs and are not empty', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
+                expect(feed.url).not.toBe('');
             });
          });
 
