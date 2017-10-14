@@ -34,7 +34,7 @@ $(function() {
          it('feeds have URLs and are not empty', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
-            })
+            });
          });
 
 
@@ -45,7 +45,7 @@ $(function() {
          it('feeds have names and are not empty', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
-            })
+            });
          });
     });
 
@@ -106,7 +106,7 @@ $(function() {
          beforeEach(function(done){
             loadFeed(0, function(){
                 firstContent = $('.feed').text();
-                console.log(firstContent)
+                console.log(firstContent);
                 done();
             });
          });
