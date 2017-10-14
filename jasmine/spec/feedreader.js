@@ -46,6 +46,7 @@ $(function() {
          it('feeds have names and are not empty', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
+                expect(feed.name).not.toBe('');
             });
          });
     });
