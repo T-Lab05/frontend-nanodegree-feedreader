@@ -90,10 +90,9 @@ $(function() {
             loadFeed(0, done);
          });
 
-         it('loadFeed function is called and completes its work', function(done){
+         it('loadFeed function is called and completes its work', function(){
             var numEntries = $('.feed .entry').length;
             expect(numEntries).toBeGreaterThan(0);
-            done();
          });
     });
     /* A test suite named "New Feed Selection" */
